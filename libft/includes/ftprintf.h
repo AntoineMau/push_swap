@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/23 19:22:50 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/02/05 10:56:57 by anmauffr         ###   ########.fr       */
+/*   Created: 2019/03/05 19:55:54 by anmauffr          #+#    #+#             */
+/*   Updated: 2019/03/05 19:55:54 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include <wchar.h>
-# include "../libft/libft.h"
+# include <libft.h>
 
 typedef enum	e_printf_modifier
 {
