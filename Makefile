@@ -6,7 +6,7 @@
 #    By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/05 19:43:25 by anmauffr          #+#    #+#              #
-#    Updated: 2019/03/06 13:48:54 by anmauffr         ###   ########.fr        #
+#    Updated: 2019/03/07 21:37:27 by anmauffr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ INC = $(addprefix $(INCS_PATH), $(INCS_NAMES))
 CC = gcc
 CPPFLAGS = -I $(INCS_PATH)
 LIBH = -I $(LDFLAGS)includes/
-CFLAGS = -Wall -Wextra -Werror -g $(CPPFLAGS) $(LIBH)
+CFLAGS = -Wall -Wextra -g $(CPPFLAGS) $(LIBH)
 
 # Text format
 _DEF = $'\033[0m

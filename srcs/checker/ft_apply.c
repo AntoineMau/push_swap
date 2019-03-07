@@ -6,13 +6,13 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:49:50 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 19:13:19 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/07 21:40:13 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_checker.h>
 
-static void		ft_display(t_check *begina, t_check *beginb, char *str)
+/*static void		ft_display(t_check *begina, t_check *beginb, char *str)
 {
 	system("clear");
 	ft_printf("/---------------\\\t");
@@ -36,7 +36,7 @@ static void		ft_display(t_check *begina, t_check *beginb, char *str)
 	ft_printf("\\---------------/\t");
 	ft_printf("\\---------------/\t\n\n");
 	usleep(50000);
-}
+}*/
 
 static void		ft_checker_b(t_check *beginb, t_check *begina, char **str)
 {
@@ -78,7 +78,7 @@ static t_check	*ft_apply(char **str, t_check *a, t_check *begina,
 	return (begina);
 }
 
-static t_check	*ft_apply_v(char **str, t_check *a, t_check *begina,
+/*static t_check	*ft_apply_v(char **str, t_check *a, t_check *begina,
 	t_check *beginb)
 {
 	t_check		*b;
@@ -105,7 +105,7 @@ static t_check	*ft_apply_v(char **str, t_check *a, t_check *begina,
 	ft_display(begina, beginb, str[i]);
 	ft_checker_b(beginb, begina, str);
 	return (begina);
-}
+}*/
 
 t_check			*ft_read_inst(t_check *a, char **str, int choix)
 {
@@ -114,7 +114,9 @@ t_check			*ft_read_inst(t_check *a, char **str, int choix)
 
 	beginb = NULL;
 	begina = a;
-	a = (choix == 0 ? ft_apply(str, a, begina, beginb)
-		: ft_apply_v(str, a, begina, beginb));
+	if (choix == 0)
+		a = ft_apply(str, a, begina, beginb);
+	else
+		ft_mlx(str, begina, beginb);
 	return (a);
 }

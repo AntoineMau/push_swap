@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 18:25:52 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 20:35:42 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/07 22:05:14 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ typedef struct	s_mlx
 	int		x;
 	int		y;
 	int		zoom;
-	// char	**str;
-	// int		i_str;
-	// t_check	*a;
-	// t_check	*b;
-	// t_check	*bega;
-	// t_check	*begb;
+	char	**str;
+	int		i_str;
+	t_check	*a;
+	t_check	*b;
+	t_check	*bega;
+	t_check	*begb;
 }				t_mlx;
 
-int				ft_mlx(void);
 void			ft_error_tmp(void);
 
 void			print_square(int x, int y, t_mlx *mlx);
 void			put_pixel(t_mlx *mlx, int x, int y, int color);
+void			print_stack(t_mlx *mlx);
 
 int				deal_key(void *param);
 int				key_press(int key, void *param);
