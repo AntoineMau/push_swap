@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 18:25:52 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 20:01:55 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/07 20:35:42 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ typedef struct	s_mlx
 	int		x;
 	int		y;
 	int		zoom;
+	// char	**str;
+	// int		i_str;
+	// t_check	*a;
+	// t_check	*b;
+	// t_check	*bega;
+	// t_check	*begb;
 }				t_mlx;
 
 int				ft_mlx(void);
