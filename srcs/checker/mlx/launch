@@ -1,0 +1,3 @@
+gcc -I /usr/local/include -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit *.c -I ../../../includes/ ../../../libft/libft.a -I ../../../libft/includes/
+./a.out
+rm a.out
