@@ -6,16 +6,16 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:49:36 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 00:32:42 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/07 16:59:57 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_checker.h>
 #include <stdlib.h>
 
-int		ft_intput(char *av, int j, t_mem *mem)
+int		ft_intput(char *av, int ac, int j, t_mem *mem)
 {
-	if (av[j] == 'v' && (av[j + 1] == ' ' || av[j + 1] == '\0')
+	if (ac > 2 && av[j] == 'v' && (av[j + 1] == ' ' || av[j + 1] == '\0')
 		&& (mem->memv = 1))
 		return (j);
 	else if (av[j] == 'e' && (av[j + 1] == ' ' || av[j + 1] == '\0'))

@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:49:55 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 00:27:41 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/07 17:09:45 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_check	*ft_recup(int ac, char **av, int choix)
 	return (p);
 }
 
-int		ft_check_av(char **av, t_mem *mem)
+int		ft_check_av(char **av, int ac, t_mem *mem)
 {
 	int		i;
 	int		j;
@@ -58,7 +58,7 @@ int		ft_check_av(char **av, t_mem *mem)
 	while (av[++i] && (j = -1))
 		while (av[i][++j])
 			if (j == 0 && av[i][j] == '-' && ft_isalnum(av[i][j + 1]))
-				j = ft_intput(av[i], j + 1, mem);
+				j = ft_intput(av[i], ac, j + 1, mem);
 			else if (av[i][j] < '0' || av[i][j] > '9')
 				return (0);
 	i = mem->memv;
@@ -98,7 +98,7 @@ int		main(int ac, char **av)
 	mem.memv = 0;
 	if (ac < 2)
 		return (ft_printf("Usage: ./checker [-help/v/e] <numbers_list>\n"));
-	if ((ft_check_av(av, &mem) == 0)
+	if ((ft_check_av(av, ac, &mem) == 0)
 		&& write(2, "\033[31mError\033[37m\n", 17))
 		return (0);
 	p = ft_recup(ac, av, mem.memv);

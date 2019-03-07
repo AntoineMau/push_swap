@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:50:34 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 00:26:35 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/07 17:00:38 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ t_check			*ft_read_inst(t_check *a, char **str, int choix);
 t_check			*ft_create_eleme(int n);
 t_check			**ft_list_push_fronte(t_check **begin_list, int n);
 int				ft_check_inpute(char *str);
-int				ft_intput(char *av, int j, t_mem *mem);
+int				ft_intput(char *av, int ac, int j, t_mem *mem);
 
 #endif
