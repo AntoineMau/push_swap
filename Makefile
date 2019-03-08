@@ -6,7 +6,7 @@
 #    By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/05 19:43:25 by anmauffr          #+#    #+#              #
-#    Updated: 2019/03/07 21:37:27 by anmauffr         ###   ########.fr        #
+#    Updated: 2019/03/08 17:48:17 by anmauffr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,10 @@ CH_SRCS_NAME = checker.c \
 				ft_move3.c \
 				ft_utiles.c \
 				ft_apply.c \
-				ft_other.c
+				ft_other.c \
+				mlx/ft_mlx.c \
+				mlx/ft_keyboard.c \
+				mlx/ft_print.c
 
 INCS_NAMES = ft_push_swap.h
 
@@ -61,6 +64,7 @@ CC = gcc
 CPPFLAGS = -I $(INCS_PATH)
 LIBH = -I $(LDFLAGS)includes/
 CFLAGS = -Wall -Wextra -g $(CPPFLAGS) $(LIBH)
+MLX = -I /usr/local/include -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 
 # Text format
 _DEF = $'\033[0m
@@ -130,7 +134,7 @@ $(CH_OBJS_PATH)%.o: $(CH_SRCS_PATH)%.c $(INC)
 		$(eval verif2 = $(shell echo $(verif2) + 1 | bc ))
 		$(eval PCR = $(shell echo "$(verif2) / $(FNCT) * 1000" | bc -l))
 		@printf " \n$(_GREEN)[%d%%]\t$(_DEF)%-40s $(_DEF)👉\t\t$(_GREEN) %-40s$(_DEF)" $(shell echo $(PCR) | sed -E "s:\.[0-9]{20}::") $< $@
-		@mkdir -p objs/checker
+		@mkdir -p objs/checker/mlx
 		@printf "$(_DEF)"
 		@$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
