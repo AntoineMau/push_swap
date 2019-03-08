@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 18:24:48 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 21:47:37 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/08 17:07:48 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,81 @@ void		ft_error_tmp(void)
 {
 	ft_printf("Error !\n");
 	exit(0);
+}
+
+t_check	*ft_lstdup(t_check *temp)
+{
+	t_check	*new;
+	t_check	*begine;
+
+	if (!(new = (t_check *)malloc(sizeof(t_check))))
+		return (0);
+	begine = new;
+	while (temp)
+	{
+		new->n = temp->n;
+		if (!(new->next = (t_check *)malloc(sizeof(t_check))))
+			return (0);
+		temp = temp->next;
+		if (temp)
+			new = new->next;
+	}
+	free(new->next);
+	new->next = NULL;
+	new = begine;
+	return (new);
+}
+
+void		ft_mergesort(t_check **headref)
+{
+	int			i;
+	int			tmp;
+	int			length;
+	t_check		*begin;
+
+	begin = *headref;
+	length = ft_lstlene(headref);
+	i = 0;
+	while (i < length)
+	{
+		if (!((*headref)->next))
+			(*headref) = begin;
+		if ((*headref)->n > (*headref)->next->n)
+		{
+			tmp = (*headref)->n;
+			(*headref)->n = (*headref)->next->n;
+			(*headref)->next->n = tmp;
+			i = 0;
+		}
+		else
+			i++;
+		(*headref) = (*headref)->next;
+	}
+	(*headref) = begin;
+}
+
+t_check		*ft_set_num(t_check *a)
+{
+	t_check		*tmp;
+	t_check		*beg_a;
+	t_check		*beg_tmp;
+	int			i;
+
+	beg_a = a;
+	tmp = ft_lstdup(a);
+	beg_tmp = tmp;
+	ft_mergesort(&tmp);
+	i = 1;
+	while ((a = beg_a) && tmp)
+	{
+		while (a->n != tmp->n)
+			a = a->next;
+		a->nb_size = i++;
+		tmp = tmp->next;
+	}
+	tmp = beg_tmp;
+	ft_free_lst(tmp);
+	return (a);
 }
 
 static void	ft_init_mlx(t_mlx *mlx, char **str, t_check *a, t_check *b)
@@ -34,7 +109,7 @@ static void	ft_init_mlx(t_mlx *mlx, char **str, t_check *a, t_check *b)
 	mlx->zoom = 10;
 	mlx->str = str;
 	mlx->i_str = 0;
-	mlx->a = a;
+	mlx->a = ft_set_num(a);
 	mlx->b = b;
 	mlx->bega = a;
 	mlx->begb = b;
@@ -49,5 +124,7 @@ int		ft_mlx(char **str, t_check *a, t_check *b)
 	mlx_hook(mlx.win, KEYRELEASE, KEYRELEASEMASK, key_release, &mlx);
 	mlx_loop_hook(mlx.mlx, deal_key, &mlx);
 	mlx_loop(mlx.mlx);
+	//mlx_string_put(mlx.mlx, mlx.win, WINX - 10, WINY / 2
+	//	, 0xFFFFFF, "Bonjour");
 	return (0);
 }

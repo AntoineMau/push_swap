@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:50:34 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 22:05:08 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/08 13:36:24 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_check
 {
 	int				n;
 	struct s_check	*next;
+	int				nb_size;
 }				t_check;
 
 typedef	struct	s_mem
