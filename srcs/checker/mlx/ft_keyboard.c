@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 18:51:41 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/08 17:14:21 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/08 17:43:44 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,10 @@ static void		ft_checker_b(t_check *beginb, t_check *begina, char **str)
 
 static t_mlx	*tareum(t_mlx *mlx)
 {
-	!ft_strcmp(mlx->str[mlx->i_str], "sa\n") ? ft_sa(mlx->a) : 0;
-	!ft_strcmp(mlx->str[mlx->i_str], "sb\n") ? ft_sb(mlx->b) : 0;
-	!ft_strcmp(mlx->str[mlx->i_str], "ss\n") ? ft_ss(mlx->a, mlx->b) : 0;
+	!ft_strcmp(mlx->str[mlx->i_str], "sa\n") ? ft_sa(&mlx->a, &mlx->bega) : 0;
+	!ft_strcmp(mlx->str[mlx->i_str], "sb\n") ? ft_sb(&mlx->b, &mlx->begb) : 0;
+	!ft_strcmp(mlx->str[mlx->i_str], "ss\n") ? ft_ss(&mlx->a, &mlx->b,
+		&mlx->bega, &mlx->begb) : 0;
 	!ft_strcmp(mlx->str[mlx->i_str], "pa\n") ? ft_pa(&mlx->a, &mlx->b
 		, &mlx->bega, &mlx->begb) : 0;
 	!ft_strcmp(mlx->str[mlx->i_str], "pb\n") ? ft_pb(&mlx->a, &mlx->b
@@ -63,9 +64,10 @@ static t_mlx	*tareum(t_mlx *mlx)
 
 static t_mlx	*tareum_inv(t_mlx *mlx)
 {
-	!ft_strcmp(mlx->str[mlx->i_str], "sa\n") ? ft_sa(mlx->a) : 0;
-	!ft_strcmp(mlx->str[mlx->i_str], "sb\n") ? ft_sb(mlx->b) : 0;
-	!ft_strcmp(mlx->str[mlx->i_str], "ss\n") ? ft_ss(mlx->a, mlx->b) : 0;
+	!ft_strcmp(mlx->str[mlx->i_str], "sa\n") ? ft_sa(&mlx->a, &mlx->bega) : 0;
+	!ft_strcmp(mlx->str[mlx->i_str], "sb\n") ? ft_sb(&mlx->b, &mlx->begb) : 0;
+	!ft_strcmp(mlx->str[mlx->i_str], "ss\n") ? ft_ss(&mlx->a, &mlx->b,
+		&mlx->bega, &mlx->begb) : 0;
 	!ft_strcmp(mlx->str[mlx->i_str], "pa\n") ? ft_pb(&mlx->a, &mlx->b
 		, &mlx->bega, &mlx->begb) : 0;
 	!ft_strcmp(mlx->str[mlx->i_str], "pb\n") ? ft_pa(&mlx->a, &mlx->b
@@ -100,13 +102,6 @@ int		deal_key(void *param)
 		mlx = mlx->keyboard[KEY_RIGHT] == 1 ? tareum(mlx) : tareum_inv(mlx);
 		mlx->keyboard[KEY_RIGHT] == 1 ? mlx->i_str++ : 0;
 		usleep(5000);
-		ft_printf("commande: %s", mlx->str[mlx->i_str]);
-		while (mlx->a)
-		{
-			ft_printf("\nmlx->a->n: %d nb->size : %d", mlx->a->n, mlx->a->nb_size);
-			mlx->a = mlx->a->next;
-		}
-		mlx->a = mlx->bega;
 	}
 	ft_bzero(mlx->canvas, 4 * WINX * WINY);
 	while (!(tmp += 4) || tmp < 4 * WINX * WINY)

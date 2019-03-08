@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:50:34 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/08 13:36:24 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/08 17:38:55 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ char			**ft_creastr(void);
 void			ft_error(t_check *p);
 void			ft_free_lst(t_check *p);
 void			ft_del_first(t_check **begin_list);
-void			ft_sa(t_check *a);
-void			ft_sb(t_check *b);
-void			ft_ss(t_check *a, t_check *b);
+void			ft_sa(t_check **a, t_check **begina);
+void			ft_sb(t_check **b, t_check **beginb);
+void			ft_ss(t_check **a, t_check **b, t_check **begina,
+	t_check **beginb);
 void			ft_pa(t_check **a, t_check **b, t_check **begina,
 	t_check **beginb);
 void			ft_pb(t_check **a, t_check **b, t_check **begina,

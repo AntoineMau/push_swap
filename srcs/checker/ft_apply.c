@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:49:50 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/08 14:06:17 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/08 17:40:13 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ static t_check	*ft_apply(char **str, t_check *a, t_check *begina,
 	begina = a;
 	while (str[++i][0] != 0)
 	{
-		!ft_strcmp(str[i], "sa\n") ? ft_sa(a) : 0;
-		!ft_strcmp(str[i], "sb\n") ? ft_sb(b) : 0;
-		!ft_strcmp(str[i], "ss\n") ? ft_ss(a, b) : 0;
+		!ft_strcmp(str[i], "sa\n") ? ft_sa(&a, &begina) : 0;
+		!ft_strcmp(str[i], "sb\n") ? ft_sb(&b, &beginb) : 0;
+		!ft_strcmp(str[i], "ss\n") ? ft_ss(&a, &b, &begina, &beginb) : 0;
 		!ft_strcmp(str[i], "pa\n") ? ft_pa(&a, &b, &begina, &beginb) : 0;
 		!ft_strcmp(str[i], "pb\n") ? ft_pb(&a, &b, &begina, &beginb) : 0;
 		!ft_strcmp(str[i], "ra\n") ? ft_ra(&a, &begina) : 0;
