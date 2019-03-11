@@ -1,3 +1,0 @@
-gcc -I /usr/local/include -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit *.c ../*.c -I ../../../includes/ ../../../libft/libft.a -I ../../../libft/includes/
-./push_swap 26 8 17 1 4 41 30 40 38 31 15 5 11 34 48 18 14 46 20 43 37 7 45 19 6 16 28 50 12 36 35 27 22 21 29 32 3 47 39 33 42 25 2 24 49 44 9 10 23 13 | ./a.out -v 26 8 17 1 4 41 30 40 38 31 15 5 11 34 48 18 14 46 20 43 37 7 45 19 6 16 28 50 12 36 35 27 22 21 29 32 3 47 39 33 42 25 2 24 49 44 9 10 23 13
-rm a.out

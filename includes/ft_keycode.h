@@ -1,17 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_keycode.h                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/07 18:23:27 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 18:24:07 by anmauffr         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef KEYCODE_H
-# define KEYCODE_H
+#ifndef FT_KEYCODE_H
+# define FT_KEYCODE_H
 
 # define KEY_ESC			53
 # define KEY_F1				122

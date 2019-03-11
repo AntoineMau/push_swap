@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/03/05 19:43:25 by anmauffr          #+#    #+#              #
-#    Updated: 2019/03/08 17:48:17 by anmauffr         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 SHELL = bash
 
 # Executable name
@@ -38,7 +26,8 @@ CH_SRCS_NAME = checker.c \
 				ft_other.c \
 				mlx/ft_mlx.c \
 				mlx/ft_keyboard.c \
-				mlx/ft_print.c
+				mlx/ft_print.c \
+				mlx/ft_others_mlx.c
 
 INCS_NAMES = ft_push_swap.h
 

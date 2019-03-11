@@ -1,42 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_apply.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/05 19:49:50 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/08 17:40:13 by anmauffr         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <ft_checker.h>
-
-/*static void		ft_display(t_check *begina, t_check *beginb, char *str)
-{
-	system("clear");
-	ft_printf("/---------------\\\t");
-	ft_printf("/---------------\\\n");
-	ft_printf("|%8c\t|\t|%8c\t|\t", 'A', 'B');
-	str[0] != '\0' ? ft_printf("Commande executee : \033[32m%s\033[37m", str)
-		: ft_printf("\033[32mEND\033[37m\n");
-	ft_printf("|---------------|\t");
-	ft_printf("|---------------|\n");
-	while (begina || beginb)
-	{
-		if (begina && ft_printf("| \033[34m%11d\033[37m\t|\t", begina->n))
-			begina = begina->next;
-		else
-			ft_printf("|\t\t|\t");
-		if (beginb && ft_printf("| \033[33m%11d\033[37m\t|\n", beginb->n))
-			beginb = beginb->next;
-		else
-			ft_printf("|\t\t|\n");
-	}
-	ft_printf("\\---------------/\t");
-	ft_printf("\\---------------/\t\n\n");
-	usleep(50000);
-}*/
 
 static void		ft_checker_b(t_check *beginb, t_check *begina, char **str)
 {

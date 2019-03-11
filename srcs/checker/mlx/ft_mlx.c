@@ -1,24 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_mlx.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/07 18:24:48 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/08 17:07:48 by anmauffr         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <ft_mlx.h>
 
-void		ft_error_tmp(void)
-{
-	ft_printf("Error !\n");
-	exit(0);
-}
-
-t_check	*ft_lstdup(t_check *temp)
+t_check		*ft_lstdup(t_check *temp)
 {
 	t_check	*new;
 	t_check	*begine;
@@ -113,18 +95,18 @@ static void	ft_init_mlx(t_mlx *mlx, char **str, t_check *a, t_check *b)
 	mlx->b = b;
 	mlx->bega = a;
 	mlx->begb = b;
+	mlx->i = 0;
 }
 
-int		ft_mlx(char **str, t_check *a, t_check *b)
+int			ft_mlx(char **str, t_check *a, t_check *b)
 {
 	t_mlx	mlx;
 
 	ft_init_mlx(&mlx, str, a, b);
 	mlx_hook(mlx.win, KEYPRESS, KEYPRESSMASK, key_press, &mlx);
 	mlx_hook(mlx.win, KEYRELEASE, KEYRELEASEMASK, key_release, &mlx);
+	mlx_hook(mlx.win, 17, KEYPRESSMASK, exite, &mlx);
 	mlx_loop_hook(mlx.mlx, deal_key, &mlx);
 	mlx_loop(mlx.mlx);
-	//mlx_string_put(mlx.mlx, mlx.win, WINX - 10, WINY / 2
-	//	, 0xFFFFFF, "Bonjour");
 	return (0);
 }
