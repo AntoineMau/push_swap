@@ -6,13 +6,13 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:15 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 17:49:18 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:57:29 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_mlx.h>
 
-void	ft_suite_mlx(t_mlx *mlx)
+void		ft_suite_mlx(t_mlx *mlx)
 {
 	mlx->keyboard[KEY_LEFT] == 1 ? (mlx->i = 0) : 0;
 	mlx->keyboard[KEY_LEFT] == 1 ? mlx->i_str-- : 0;
@@ -21,7 +21,7 @@ void	ft_suite_mlx(t_mlx *mlx)
 	mlx->speed == 0 ? usleep(1000) : usleep(100000);
 }
 
-double	ratio(int start, int end, int current)
+double		ratio(int start, int end, int current)
 {
 	double	pos;
 	double	distance;
@@ -31,12 +31,12 @@ double	ratio(int start, int end, int current)
 	return (distance == 0 ? 1.0 : pos / distance);
 }
 
-static int		light(int start, int end, double percent)
+static int	light(int start, int end, double percent)
 {
 	return ((int)((1 - percent) * start + percent * end));
 }
 
-int				color(int max, int nb_size)
+int			color(int max, int nb_size)
 {
 	int		red;
 	int		green;

@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:10 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 17:49:11 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/11 18:00:52 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,8 @@ int				deal_key(void *param)
 	if (mlx->keyboard[KEY_SPACEBAR] == 1 && mlx->str[mlx->i_str][0] != 0)
 	{
 		tareum(mlx);
-		mlx->i_str++;
 		mlx->speed == 0 ? usleep(1000) : usleep(100000);
-		mlx->str[mlx->i_str][0] == 0 ? mlx->keyboard[KEY_SPACEBAR] = 0 : 0;
+		mlx->str[++mlx->i_str][0] == 0 ? mlx->keyboard[KEY_SPACEBAR] = 0 : 0;
 	}
 	ft_bzero(mlx->canvas, 4 * WINX * WINY);
 	while (!(tmp += 4) || tmp < 4 * WINX * WINY)

@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:50:46 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 17:50:47 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:55:29 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@
 # define RES1 1000
 # define RES2 1000
 # define ZOOM 6
-
-/*
-** 512 car seg sinon pour ctr car code > 256
-*/
 
 typedef struct	s_mlx
 {
