@@ -32,22 +32,30 @@ typedef struct	s_mlx
 	char	**str;
 	int		i_str;
 	int		i;
+	int		max;
+	int		speed;
 	t_check	*a;
 	t_check	*b;
 	t_check	*bega;
 	t_check	*begb;
+
 }				t_mlx;
 
 void			ft_error_tmp(void);
 void			print_square(int x, int y, t_mlx *mlx);
 void			put_pixel(t_mlx *mlx, int x, int y, int color);
 void			print_stack(t_mlx *mlx);
+void			ft_checke_value(t_mlx **mlx);
+void			ft_free_this(t_mlx **mlx);
+void			ft_error_tmp(void);
+void			ft_suite_mlx(t_mlx *mlx);
 int				deal_key(void *param);
 int				key_press(int key, void *param);
 int				key_release(int key, void *param);
 int				exite(t_mlx *mlx);
-void			ft_checke_value(t_mlx **mlx);
-void			ft_free_this(t_mlx **mlx);
-void			ft_error_tmp(void);
+int				color(int max, int nb_size);
+double			ratio(int start, int end, int current);
+t_mlx			*tareum(t_mlx *mlx);
+t_mlx			*tareum_inv(t_mlx *mlx);
 
 #endif

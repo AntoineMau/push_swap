@@ -27,7 +27,8 @@ CH_SRCS_NAME = checker.c \
 				mlx/ft_mlx.c \
 				mlx/ft_keyboard.c \
 				mlx/ft_print.c \
-				mlx/ft_others_mlx.c
+				mlx/ft_others_mlx.c \
+				mlx/ft_color.c
 
 INCS_NAMES = ft_push_swap.h
 

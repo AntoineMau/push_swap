@@ -5,7 +5,10 @@ int				key_press(int key, void *param)
 	t_mlx *mlx;
 
 	mlx = (t_mlx *)param;
-	mlx->keyboard[key] = 1;
+	if (key == KEY_SPACEBAR)
+		;
+	else
+		mlx->keyboard[key] = 1;
 	return (0);
 }
 
@@ -14,11 +17,16 @@ int				key_release(int key, void *param)
 	t_mlx *mlx;
 
 	mlx = (t_mlx *)param;
-	mlx->keyboard[key] = 0;
+	if (key == KEY_SPACEBAR)
+		mlx->keyboard[key] = mlx->keyboard[KEY_SPACEBAR] ? 0 : 1;
+	else if (key == KEY_PAD_SUB || key == KEY_PAD_ADD)
+		mlx->speed = key != KEY_PAD_SUB ? 0 : 1;
+	else
+		mlx->keyboard[key] = 0;
 	return (0);
 }
 
-static t_mlx	*tareum(t_mlx *mlx)
+t_mlx			*tareum(t_mlx *mlx)
 {
 	!ft_strcmp(mlx->str[mlx->i_str], "sa\n") ? ft_sa(&mlx->a, &mlx->bega) : 0;
 	!ft_strcmp(mlx->str[mlx->i_str], "sb\n") ? ft_sb(&mlx->b, &mlx->begb) : 0;
@@ -39,7 +47,7 @@ static t_mlx	*tareum(t_mlx *mlx)
 	return (mlx);
 }
 
-static t_mlx	*tareum_inv(t_mlx *mlx)
+t_mlx			*tareum_inv(t_mlx *mlx)
 {
 	!ft_strcmp(mlx->str[mlx->i_str], "sa\n") ? ft_sa(&mlx->a, &mlx->bega) : 0;
 	!ft_strcmp(mlx->str[mlx->i_str], "sb\n") ? ft_sb(&mlx->b, &mlx->begb) : 0;
@@ -69,12 +77,12 @@ int				deal_key(void *param)
 	(tmp = -4) && (mlx->keyboard[KEY_ESC]) ? exite(mlx) : 0;
 	if ((mlx->keyboard[KEY_RIGHT] && mlx->str[mlx->i_str][0] != 0)
 		|| (mlx->keyboard[KEY_LEFT] && mlx->i_str > 0))
+		ft_suite_mlx(mlx);
+	if (mlx->keyboard[KEY_SPACEBAR] == 1 && mlx->str[mlx->i_str][0] != 0)
 	{
-		mlx->keyboard[KEY_LEFT] == 1 ? (mlx->i = 0) : 0;
-		mlx->keyboard[KEY_LEFT] == 1 ? mlx->i_str-- : 0;
-		mlx = mlx->keyboard[KEY_RIGHT] == 1 ? tareum(mlx) : tareum_inv(mlx);
-		mlx->keyboard[KEY_RIGHT] == 1 ? mlx->i_str++ : 0;
-		usleep(1000);
+		tareum(mlx);
+		mlx->i_str++;
+		mlx->str[mlx->i_str][0] == 0 ? mlx->keyboard[KEY_SPACEBAR] = 0 : 0;
 	}
 	ft_bzero(mlx->canvas, 4 * WINX * WINY);
 	while (!(tmp += 4) || tmp < 4 * WINX * WINY)

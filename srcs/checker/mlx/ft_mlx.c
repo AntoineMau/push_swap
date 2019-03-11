@@ -93,9 +93,11 @@ static void	ft_init_mlx(t_mlx *mlx, char **str, t_check *a, t_check *b)
 	mlx->i_str = 0;
 	mlx->a = ft_set_num(a);
 	mlx->b = b;
+	mlx->max = ft_lstlene(&a);
 	mlx->bega = a;
 	mlx->begb = b;
 	mlx->i = 0;
+	mlx->speed = 0;
 }
 
 int			ft_mlx(char **str, t_check *a, t_check *b)
