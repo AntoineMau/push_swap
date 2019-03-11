@@ -45,7 +45,8 @@ int		ft_check_av(char **av, int ac, t_mem *mem)
 	i = 0;
 	while (av[++i] && (j = -1))
 		while (av[i][++j])
-			if (j == 0 && av[i][j] == '-' && ft_isalnum(av[i][j + 1]))
+			if (j == 0 && (av[i][j] == '+' || av[i][j] == '-')
+				&& ft_isalnum(av[i][j + 1]))
 				j = ft_intput(av[i], ac, j + 1, mem);
 			else if (av[i][j] < '0' || av[i][j] > '9')
 				return (0);

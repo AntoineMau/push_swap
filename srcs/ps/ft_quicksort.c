@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_quicksort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: judumay <judumay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:48:47 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 00:37:26 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/11 10:45:09 by judumay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_push_swap.h>
+#include <stdlib.h>
 
 void		ft_tej_de_a(t_pile *pile, t_begin *begin, t_ps **comp, int n)
 {

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: judumay <judumay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:49:06 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/05 19:49:07 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/11 10:44:51 by judumay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_push_swap.h>
-#include <stdlib.h>
 
 void	ft_sa(t_checke **a, t_checke **begina, int n)
 {

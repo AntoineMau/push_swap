@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_others.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: judumay <judumay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:48:56 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/05 19:48:57 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/11 10:47:03 by judumay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_push_swap.h>
+#include <stdlib.h>
 
 void		ft_error(t_checke *p)
 {

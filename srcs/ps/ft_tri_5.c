@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tri_5.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: judumay <judumay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:48:33 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 00:38:32 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/11 10:47:34 by judumay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_push_swap.h>
+#include <stdlib.h>
 
 t_checke	*ft_lstndupa(t_pile *pile, t_begin *begin, t_ps **comp, int n)
 {

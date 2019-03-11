@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tarace.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: judumay <judumay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:48:43 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 00:38:05 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/11 10:45:22 by judumay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_push_swap.h>
+#include <stdlib.h>
 
 void		ft_lstdel_oklm(t_checke **a, t_checke **begina, int median)
 {
