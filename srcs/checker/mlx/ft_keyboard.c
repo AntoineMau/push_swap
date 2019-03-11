@@ -82,6 +82,7 @@ int				deal_key(void *param)
 	{
 		tareum(mlx);
 		mlx->i_str++;
+		mlx->speed == 0 ? usleep(1000) : usleep(100000);
 		mlx->str[mlx->i_str][0] == 0 ? mlx->keyboard[KEY_SPACEBAR] = 0 : 0;
 	}
 	ft_bzero(mlx->canvas, 4 * WINX * WINY);
