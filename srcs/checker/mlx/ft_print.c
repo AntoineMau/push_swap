@@ -21,7 +21,7 @@ void		print_square_a(int x, int y, t_mlx *mlx)
 
 	j = -1;
 	while (++j <= mlx->a->nb_size * mlx->zoom && (i = -1))
-		while (++i < 35)
+		while (++i < 30)
 			put_pixel(mlx, x + i, y - j, couleur(mlx->a->nb_size * 1000));
 }
 
@@ -32,7 +32,7 @@ void		print_square_b(int x, int y, t_mlx *mlx)
 
 	j = -1;
 	while (++j <= mlx->b->nb_size * mlx->zoom && (i = -1))
-		while (++i < 35)
+		while (++i < 30)
 			put_pixel(mlx, x + i, y + j, couleur(mlx->b->nb_size * 1000));
 }
 
