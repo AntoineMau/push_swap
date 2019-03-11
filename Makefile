@@ -88,7 +88,7 @@ verif2 = 0
 all: lib ps ch
 
 lib:
-		@make -sC libft -j
+		@make -sC libft -j100
 
 librm:
 		@make -sC libft fclean
