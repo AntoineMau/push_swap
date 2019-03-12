@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:50:29 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/07 00:40:09 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/12 07:30:13 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ t_checke		*ft_lstdup(t_checke *temp, t_pile *pile, t_begin *begin,
 t_checke		*ft_lstndupa(t_pile *pile, t_begin *begin, t_ps **comp, int n);
 t_checke		*ft_lstndupb(t_pile *pile, t_begin *begin, t_ps **comp, int n);
 int				ft_is_sorted(t_checke *a);
+
 #endif

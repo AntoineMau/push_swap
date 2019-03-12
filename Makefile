@@ -89,22 +89,22 @@ verif2 = 0
 all: lib ps ch
 
 lib:
-		@make -sC libft -j100
+		@make -sC $(LDFLAGS) -j100
 
 librm:
-		@make -sC libft fclean
+		@make -sC $(LDFLAGS) fclean
 
 ps: $(PS_OBJS)
-		@$(CC) $(PS_OBJS) libft/libft.a -o $(PS)
+		@$(CC) $(PS_OBJS) $(LDFLAGS)$(LDLIBS) -o $(PS)
 
 ch: $(CH_OBJS)
-		@$(CC) $(CH_OBJS) $(MLX) libft/libft.a -o $(CH)
+		@$(CC) $(CH_OBJS) $(MLX) $(LDFLAGS)$(LDLIBS) -o $(CH)
 
 $(PS): lib $(PS_OBJS)
-		@$(CC) $(PS_OBJS) libft/libft.a -o $(PS)
+		@$(CC) $(PS_OBJS) $(LDFLAGS)$(LDLIBS) -o $(PS)
 
 $(CH): lib $(CH_OBJS)
-		@$(CC) $(CH_OBJS) $(MLX) libft/libft.a -o $(CH)
+		@$(CC) $(CH_OBJS) $(MLX) $(LDFLAGS)$(LDLIBS) -o $(CH)
 
 $(PS_OBJS_PATH)%.o: $(PS_SRCS_PATH)%.c $(INC)
 		@if [[ $(verif1) -eq 0 ]]; then printf "\n\n$(_GRAS)$(_CYAN)|===========================================>  $(PS)  <============================================|$(_DEF)\n";\
