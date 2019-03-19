@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:29 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/19 10:59:27 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 11:13:38 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_check	*ft_recup(int ac, char **av, int choix)
 	if (!(p = (t_check*)malloc(sizeof(t_check) * 1)))
 		ft_error(p);
 	begin = p;
-	i = choix == 0 ? 1 : 2;
+	i = choix == 0 ? 0 : 1;
 	while (--ac > choix)
 	{
 		if (!(p->next = (t_check*)malloc(sizeof(t_check) * 1)))
