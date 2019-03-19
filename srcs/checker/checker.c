@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:29 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/19 09:09:08 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 10:01:52 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ int		ft_check_av(char **av, int ac, t_mem *mem)
 		return (0);
 	while (av[++i] && (j = -1))
 		while (av[i][++j])
-			if (j == 0 && (av[i][j] == '+' || av[i][j] == '-')
-				&& ft_isalnum(av[i][j + 1]))
+			if (!ft_strcmp(av[i], "-v") && i == 1 && j == 0 && (av[i][j] == '+'
+				|| av[i][j] == '-') && ft_isalnum(av[i][j + 1]))
 				j = ft_intput(av[i], ac, j + 1, mem);
 			else if (av[i][j] < '0' || av[i][j] > '9')
 				return (0);
