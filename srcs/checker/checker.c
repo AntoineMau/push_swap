@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:29 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/19 10:32:33 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 10:59:27 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,10 @@ int		ft_check_av(char **av, int ac, t_mem *mem)
 			else if (av[i][j] < '0' || av[i][j] > '9')
 				return (0);
 	i = mem->memv;
-	while (av[++i])
+	while (av[++i] && (j = mem->memv))
 	{
-		j = mem->memv;
-		if (ft_strlen(av[i]) > 11 || ft_atol(av[i]) > INT32_MAX
-			|| ft_atol(av[i]) < INT32_MIN)
+		if (av[i][0] == '\0' || ft_strlen(av[i]) > 11
+			|| ft_atol(av[i]) > INT32_MAX || ft_atol(av[i]) < INT32_MIN)
 			return (0);
 		while (++j != i)
 			if (ft_atol(av[i]) == ft_atol(av[j]))
@@ -97,7 +96,7 @@ int		main(int ac, char **av)
 	t_check *begin;
 	t_mem	mem;
 
-	mem.memv = 0;
+	mem.memv = -1;
 	if (ac < 2)
 		return (ft_printf("Usage: ./checker [-help/v/e] <numbers_list>\n"));
 	if ((ft_check_av(av, ac, &mem) == 0)
