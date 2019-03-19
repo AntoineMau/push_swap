@@ -89,7 +89,7 @@ verif2 = 0
 all: lib ps ch
 
 lib:
-		@make -sC $(LDFLAGS) -j100
+		@make -sC $(LDFLAGS) -j
 
 librm:
 		@make -sC $(LDFLAGS) fclean
