@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:21 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 17:49:22 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 10:09:47 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ static void	ft_init_mlx(t_mlx *mlx, char **str, t_check *a, t_check *b)
 	if (!(mlx->img = mlx_new_image(mlx->mlx, WINX, WINY)))
 		ft_error_tmp();
 	ft_bzero(mlx->keyboard, sizeof(mlx->keyboard));
-	mlx->canvas = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->size_line
-		, &mlx->endian);
+	mlx->canvas = mlx_get_data_addr(mlx->img, &mlx->bpp, &mlx->size_line,
+		&mlx->endian);
 	mlx->x = 0;
 	mlx->y = 0;
 	mlx->zoom = 10;

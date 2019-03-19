@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:26 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 17:49:26 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 10:10:31 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void		print_stack(t_mlx *mlx)
 	i_a = 0;
 	while (++i_a && mlx->a)
 	{
-		print_square_a(i_a * ((WINX - 10) / mlx->max) - (WINX / mlx->max) + 15
-			, (WINY / 2 - 10), mlx);
+		print_square_a(i_a * ((WINX - 10) / mlx->max) - (WINX / mlx->max) + 15,
+			(WINY / 2 - 10), mlx);
 		mlx->a = mlx->a->next;
 	}
 	mlx->a = mlx->bega;
@@ -58,8 +58,8 @@ void		print_stack(t_mlx *mlx)
 	i_b = 0;
 	while (++i_b && mlx->b)
 	{
-		print_square_b(i_b * ((WINX - 10) / mlx->max) - (WINX / mlx->max) + 15
-			, (WINY / 2 + 10), mlx);
+		print_square_b(i_b * ((WINX - 10) / mlx->max) - (WINX / mlx->max) + 15,
+			(WINY / 2 + 10), mlx);
 		mlx->b = mlx->b->next;
 	}
 	mlx->b = mlx->begb;

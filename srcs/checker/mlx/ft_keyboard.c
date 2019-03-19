@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:10 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 18:00:52 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 10:09:16 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ int				deal_key(void *param)
 			* WINX * ((WINY / 2) + 1) ? 0x00FF0000 : 0x00000000;
 	print_stack(mlx);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img, 0, 0);
-	mlx_string_put(mlx->mlx, mlx->win, WINX - 100, 10
-		, 0xFFFFFF, mlx->str[mlx->i_str]);
+	mlx_string_put(mlx->mlx, mlx->win, WINX - 100, 10,
+		0xFFFFFF, mlx->str[mlx->i_str]);
 	mlx->str[mlx->i_str][0] == 0 && mlx->i == 0 && (mlx->i = 1)
 		? ft_checke_value(&mlx) : 0;
 	return (0);
