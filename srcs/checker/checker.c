@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:29 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/19 10:01:52 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 10:32:33 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int		ft_check_av(char **av, int ac, t_mem *mem)
 	int		i;
 	int		j;
 
-	if (!(i = 0) && (av[1][0] == '\0' || (ft_strcmp(av[1], "-v\0") == 0
-		&& av[2][0] == '\0')))
+	if (!(i = 0) && (av[1][0] == '\0' || (ac < 3
+		&& ft_strcmp(av[1], "-v") == 0)))
 		return (0);
 	while (av[++i] && (j = -1))
 		while (av[i][++j])

@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:32 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 17:49:33 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 10:35:17 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_check			*ft_read_inst(t_check *a, char **str, int choix)
 
 	beginb = NULL;
 	begina = a;
-	if (choix == 0)
+	if (choix == 0 || ft_lstlene(&begina) == 1)
 		a = ft_apply(str, a, begina, beginb);
 	else
 		ft_mlx(str, begina, beginb);
