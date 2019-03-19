@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:15 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 17:57:29 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 08:54:46 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void		ft_suite_mlx(t_mlx *mlx)
 {
+	if ((mlx->keyboard[KEY_LEFT] == 1 && mlx->keyboard[KEY_RIGHT] == 1)
+		|| (mlx->keyboard[KEY_LEFT] == 1 && mlx->keyboard[KEY_SPACEBAR] == 1))
+		return ;
 	mlx->keyboard[KEY_LEFT] == 1 ? (mlx->i = 0) : 0;
 	mlx->keyboard[KEY_LEFT] == 1 ? mlx->i_str-- : 0;
 	mlx = mlx->keyboard[KEY_RIGHT] == 1 ? tareum(mlx) : tareum_inv(mlx);
 	mlx->keyboard[KEY_RIGHT] == 1 ? mlx->i_str++ : 0;
-	mlx->speed == 0 ? usleep(1000) : usleep(100000);
+	usleep(mlx->speed * 100000);
 }
 
 double		ratio(int start, int end, int current)
