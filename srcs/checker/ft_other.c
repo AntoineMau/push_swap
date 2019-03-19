@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:41 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/19 10:59:33 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 11:34:42 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int		ft_intput(char *av, int ac, int j, t_mem *mem)
 {
 	if (ac > 2 && av[j] == 'v' && (av[j + 1] == ' ' || av[j + 1] == '\0')
-		&& (mem->memv = 0))
+		&& (mem->memv = 1))
 		return (j);
 	else if (av[j] == 'e' && (av[j + 1] == ' ' || av[j + 1] == '\0'))
 	{

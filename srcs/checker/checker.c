@@ -6,7 +6,7 @@
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 17:49:29 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/19 11:13:38 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/19 11:52:46 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_check	*ft_recup(int ac, char **av, int choix)
 	if (!(p = (t_check*)malloc(sizeof(t_check) * 1)))
 		ft_error(p);
 	begin = p;
-	i = choix == 0 ? 0 : 1;
+	i = choix == 0 ? 1 : 2;
 	while (--ac > choix)
 	{
 		if (!(p->next = (t_check*)malloc(sizeof(t_check) * 1)))
@@ -58,16 +58,16 @@ int		ft_check_av(char **av, int ac, t_mem *mem)
 		return (0);
 	while (av[++i] && (j = -1))
 		while (av[i][++j])
-			if (!ft_strcmp(av[i], "-v") && i == 1 && j == 0 && (av[i][j] == '+'
-				|| av[i][j] == '-') && ft_isalnum(av[i][j + 1]))
+			if (j == 0 && (av[i][j] == '+' || av[i][j] == '-')
+				&& ft_isalnum(av[i][j + 1]))
 				j = ft_intput(av[i], ac, j + 1, mem);
 			else if (av[i][j] < '0' || av[i][j] > '9')
 				return (0);
 	i = mem->memv;
-	while (av[++i] && (j = mem->memv))
+	while (av[++i] && (j = mem->memv) != -1)
 	{
-		if (av[i][0] == '\0' || ft_strlen(av[i]) > 11
-			|| ft_atol(av[i]) > INT32_MAX || ft_atol(av[i]) < INT32_MIN)
+		if (!av[i][0] || ft_strlen(av[i]) > 11 || (i > 1 && !ft_strcmp(av[i],
+			"-v")) || ft_atol(av[i]) > INT32_MAX || ft_atol(av[i]) < INT32_MIN)
 			return (0);
 		while (++j != i)
 			if (ft_atol(av[i]) == ft_atol(av[j]))
@@ -96,7 +96,7 @@ int		main(int ac, char **av)
 	t_check *begin;
 	t_mem	mem;
 
-	mem.memv = -1;
+	mem.memv = 0;
 	if (ac < 2)
 		return (ft_printf("Usage: ./checker [-help/v/e] <numbers_list>\n"));
 	if ((ft_check_av(av, ac, &mem) == 0)
