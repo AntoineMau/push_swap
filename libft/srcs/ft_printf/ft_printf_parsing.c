@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_parsing.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anmauffr <anmauffret@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 21:04:07 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/05 21:04:07 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/20 11:11:40 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_printf		*ft_printf_parsing(t_printf *p, const char *format)
 	ft_printf_get_conv(p, format);
 	if (!format[p->index] && (p->error = -1))
 		return (p);
-	if (p->conv == FT_PRINTF_NO_MODIFIERS)
+	if ((int)p->conv == (int)FT_PRINTF_NO_MODIFIERS)
 		p->tmpchar = format[p->index];
 	++p->index;
 	return (p);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_no_conv.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anmauffr <anmauffret@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 21:03:53 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/05 21:03:54 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/20 11:11:12 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static t_printf		*ft_printf_champ(t_printf *p)
 
 t_printf			*ft_printf_no_conv(t_printf *p)
 {
-	if (!(p->conv == FT_PRINTF_NO_MODIFIERS))
+	if (!((int)p->conv == (int)FT_PRINTF_NO_MODIFIERS))
 		return (p);
 	if (!(p->conv_ret = ft_strnew(1))
 		&& (p->error = -1))
