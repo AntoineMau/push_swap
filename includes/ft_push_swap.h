@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anmauffr <anmauffret@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:50:29 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/12 07:30:13 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/20 12:21:53 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+
+# define INT32_MAX 2147483647
+# define INT32_MIN -2147483648
 
 typedef struct	s_checke
 {

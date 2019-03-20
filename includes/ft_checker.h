@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checker.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anmauffr <anmauffret@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 19:50:34 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/08 17:38:55 by anmauffr         ###   ########.fr       */
+/*   Updated: 2019/03/20 12:21:48 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 # define BUF_SIZE 2
 # define BUFF_STR 1000000
+# define INT32_MAX 2147483647
+# define INT32_MIN -2147483648
 
 typedef struct	s_check
 {
