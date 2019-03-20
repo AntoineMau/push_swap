@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anmauffr <anmauffr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/11 17:50:46 by anmauffr          #+#    #+#             */
-/*   Updated: 2019/03/11 17:55:29 by anmauffr         ###   ########.fr       */
+/*   Created: 2019/03/20 13:40:34 by anmauffr          #+#    #+#             */
+/*   Updated: 2019/03/20 13:45:13 by anmauffr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,23 @@
 
 # include "mlx.h"
 # include "ft_checker.h"
-# include "ft_keycode.h"
 # include <math.h>
+//# include "ft_keycode_mac.h"
+# include "ft_keycode_ubuntu.h"
 
 # define WINX 1920
 # define WINY 1080
 # define RES1 1000
 # define RES2 1000
 # define ZOOM 6
+//# define SIZE_TAB 512 // Mac
+# define SIZE_TAB 100000 // Ubuntu
 
 typedef struct	s_mlx
 {
 	void	*mlx;
 	void	*win;
-	int		keyboard[512];
+	int		keyboard[SIZE_TAB];
 	void	*img;
 	char	*canvas;
 	int		bpp;
