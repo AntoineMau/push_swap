@@ -53,8 +53,12 @@ INC = $(addprefix $(INCS_PATH), $(INCS_NAMES))
 CC = gcc
 CPPFLAGS = -I $(INCS_PATH)
 LIBH = -I $(LDFLAGS)includes/
-CFLAGS = -Wall -Wextra -g $(CPPFLAGS) $(LIBH)
-MLX = -I /usr/local/include -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+CFLAGS = -Wall -Wextra -Werror $(CPPFLAGS) $(LIBH)
+
+# For Mac
+#MLX = -I /usr/local/include/ -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+# For Ubuntu
+MLX = -I /usr/local/include/ -L /usr/local/lib/ -lmlx -lXext -lX11 -lm
 
 # Text format
 _DEF = $'\033[0m
